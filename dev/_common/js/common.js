@@ -94,7 +94,7 @@ function balls(list){
 }
 
 function b_970x250(){
-	
+	standard(200, "hor")
 }
 
 function b_160x600(){

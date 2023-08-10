@@ -94,7 +94,9 @@ function balls(list) {
 	return tl;
 }
 
-function b_970x250() {}
+function b_970x250() {
+	standard(200, "hor");
+}
 
 function b_160x600() {
 	standard(200, "ver");
@@ -178,7 +180,7 @@ exports.olg = olg;
 
 var _commonJsCommonJs = require('../../_common/js/common.js');
 
-(0, _commonJsCommonJs.b_728x90)();
+(0, _commonJsCommonJs.b_970x250)();
 
 },{"../../_common/js/common.js":1}]},{},[4])
 
