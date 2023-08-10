@@ -67,7 +67,10 @@ tl.from(".t2", {duration:.36, y:`-=${y}`}, "+=.3")
 
 tl.add(balls([".ball_b_1", ".ball_b_2", ".ball_b_3", ".ball_b_4", ".ball_b_5"]))
 
-tl.add("f3", "+=3.7")
+
+const f3Duration = universalBanner.name === "aware"?3.7: 2.5
+console.log(f3Duration);
+tl.add("f3", `+=${f3Duration}`)
 
 tl.from([".bg", ".legal"], {duration:.3, opacity:0}, "f3")
 
