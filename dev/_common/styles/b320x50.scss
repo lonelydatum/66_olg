@@ -19,8 +19,14 @@
 
 
 #legalBtn{	
-	@include pos(650, 45);	
+	@include pos(280, 0);	
 	width: 80px;
-	display: none;
+
+	// display: none;
 	// opacity: 1 !important;
+}
+
+#legalContent{
+	line-height: 11px;
+	font-size: 9px;
 }

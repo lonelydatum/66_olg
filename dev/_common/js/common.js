@@ -13,6 +13,11 @@ const read = {
 	frame3: 3
 }
 
+const yyy = {
+	b_300x250: 100,
+	b_160x600: 250,
+}
+
 read.frame1[`Golf`] = 1.5
 read.frame1[`MARCH2`] = 2.8
 
@@ -21,12 +26,6 @@ const {w, h} = bannerSize
 console.log(read);
 
 
-function fader(el, time){
-	const tl = new TimelineMax()
-	tl.from(el, {duration:.3, opacity:0}, "+=.2")
-	tl.to(el, {duration:.2, opacity:0}, `+=${time}`)
-	return tl
-}
 
 function init(){	
 	const tl = new TimelineMax({onComplete:()=>{
@@ -40,79 +39,69 @@ function init(){
 }
 
 
-function sliderSlant(){
-	const tl = new TimelineMax()
-	tl.add("t1")
-	tl.from(".t1a", {duration:.20, x:"-=100", y:"+=30", opacity:0, ease:Power4.easeOut}, "t1")
-	tl.from(".t1b", {duration:.20, x:"+=100", y:"-=30", opacity:0, ease:Power4.easeOut}, "t1+=.39")
+function standard(y){	
+	
+const tl = init()	
+	
+olg()
+tl.add( balls([".ball_a_1", ".ball_a_2", ".ball_a_3", ".ball_a_4", ".ball_a_5"]), .5 )
+
+tl.from(".t1", {duration:.36, y:`-=${y}`})
+
+tl.add("f2", "+=2.2")
+tl.to(".f1", {duration:.3, opacity:0}, "f2")
+
+tl.to(".peeps", {duration:.3, opacity:0}, "f2")
+tl.from(".peeps_blur", {duration:.3, opacity:0}, "f2")
+
+
+tl.from(".phone", {duration:.3, y:`+=${bannerSize.h}`})
+tl.from(".t2", {duration:.36, y:`-=${y}`}, "+=.3")
+
+tl.add(balls([".ball_b_1", ".ball_b_2", ".ball_b_3"]))
+
+tl.add("f3", "+=4")
+
+tl.from([".bg", ".legal"], {duration:.3, opacity:0}, "f3")
+
+tl.from([".hand_0", ".hand_1"], {duration:.3, y:`+=${bannerSize.h}`})
+
+
+tl.from(".t3", {duration:.3, x:`-=${bannerSize.w}`})
+tl.from(".cta", {duration:.3, x:`-=${bannerSize.w}`})
+
+tl.add("screen_change", "+=2")
+tl.to(".hand_1", {duration:.3, opacity:0}, "screen_change")
+tl.from(".hand_2", {duration:.3, opacity:0}, "screen_change")
+	
+
+	
+
 	return tl
 }
 
-
-function sliderVertical(){
+function balls(list){
 	const tl = new TimelineMax()
-	tl.add("t1")
-	tl.from(".t1a", {duration:.20,  y:"-=30", opacity:0}, "t1")
-	tl.from(".t1b", {duration:.20,  y:"+=30", opacity:0}, "t1+=.2")
-	return tl
-}
-
-function standard(frame1=sliderSlant){	
-	
-	const tl = init()	
-	// tl.from(".proline1", {duration:.2, opacity:0}, "+=.2")
-	tl.to(".proline1", {duration:.2, opacity:0}, "+=.8")
-
-	
-	tl.add(frame1())
-
-	tl.to([ ".bg", ".t1"], {duration:.2, opacity:0}, `+=${read.frame1[window.universalBanner.name]}`)
-
-
-	
-	if(universalBanner.size==="320x50"){
-		// tl.add(fader(".frame2a", read.frame3), "+=.1")
-		// tl.add(fader(".frame2b", 1.2), "+=.1")
-	}else if(universalBanner.size==="300x250"){
-		// tl.add(fader(".frame2a", 2.3), "+=.1")
-		// tl.add(fader(".frame2b", read.frame2), "+=.1")
-	}else{
-		// tl.from(".frame2a", {duration:.3, opacity:0}, "+=.1")
-		// tl.from(".frame2b", {duration:.3, opacity:0}, "+=.3")
-		// tl.to(".frame2", {duration:.2, opacity:0}, `+=${read.frame2}`)
-	}
-	
-
-	
-
-	tl.add(fader(".frame3a", 1.9), "+=.1")
-	// tl.add(fader(".frame3b", 1.7), "+=.1")
-	
-
-
-	tl.from([".frame4", ".footer"], {duration:.2, opacity:0}, "+=.3")
-	tl.from(".cta", {duration:.2, opacity:0}, "+=.8")
-
-
-	tl.add(olg())
-
+	list.map((item, i)=>{
+		tl.from(item, {duration:.5, opacity:0,  y:"+=70", ease:Back.easeOut}, (1+i)/list.length*.5)
+	})
 	return tl
 }
 
 function b_970x250(){
-	b_728x90()
+	
 }
 
 function b_160x600(){
-	standard()
+	standard(200)
 }
 
 function b_300x250(){		
-	standard()
+	standard(100)
 }
 
 function b_300x600(){		
-	standard()
+	standard(200)
 }
 
 function b_1000x700(){	
@@ -125,11 +114,11 @@ function b_970x70(){
 }
 
 function b_320x50(){
-	standard(sliderVertical)
+	standard(50)
 }
 
 function b_728x90(text1){
-	standard(sliderVertical)
+	
 	
 }
 

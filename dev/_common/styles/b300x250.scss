@@ -16,14 +16,7 @@
 
 
 #legalBtn{	
-	@include pos(190, 224);	
+	@include pos(240, 0);	
 	width: 60px;
-}
-
-.t1a{
-	// @include pos-scale(-130, 30, .5);
-}
-
-.t1b{
-	// @include pos-scale(130, -30, .5);
+	// opacity: 1;
 }
