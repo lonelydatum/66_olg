@@ -33,8 +33,6 @@ read.frame1["MARCH2"] = 2.8;
 var w = bannerSize.w;
 var h = bannerSize.h;
 
-console.log(read);
-
 function init() {
 	var tl = new TimelineMax({ onComplete: function onComplete() {
 			if (document.getElementById("legalBtn")) {
@@ -47,7 +45,11 @@ function init() {
 }
 
 function standard(y, vh) {
+	var xDuration = .3 * (bannerSize.w / 300);
+	xDuration = Math.min(xDuration, .5);
 
+	var yDuration = .3 * (bannerSize.h / 250);
+	yDuration = Math.min(yDuration, .5);
 	var tl = init();
 
 	(0, _proline.olg)();
@@ -70,11 +72,11 @@ function standard(y, vh) {
 
 	tl.from([".bg", ".legal"], { duration: .3, opacity: 0 }, "f3");
 
-	tl.from([".hand_0", ".hand_1"], { duration: .3, y: "+=" + bannerSize.h });
+	tl.from([".hand_0", ".hand_1"], { duration: yDuration, y: "+=" + bannerSize.h });
 
-	tl.from(".t3", { duration: .3, x: "-=" + bannerSize.w });
+	tl.from(".t3", { duration: xDuration, x: "-=" + bannerSize.w });
 	if (vh === "ver") {
-		tl.from(".cta", { duration: .3, x: "-=" + bannerSize.w });
+		tl.from(".cta", { duration: xDuration, x: "-=" + bannerSize.w });
 	} else {
 		tl.from(".cta", { duration: .3, opacity: 0 });
 	}

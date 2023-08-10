@@ -23,7 +23,7 @@ read.frame1[`MARCH2`] = 2.8
 
 const {w, h} = bannerSize
 
-console.log(read);
+
 
 
 
@@ -40,8 +40,15 @@ function init(){
 
 
 function standard(y, vh){	
+	let xDuration = .3 * (bannerSize.w/300)
+	xDuration = Math.min(xDuration, .5)
 	
+
+	let yDuration = .3 * (bannerSize.h/250)
+	yDuration = Math.min(yDuration, .5)
 const tl = init()	
+
+
 	
 olg()
 tl.add( balls([".ball_a_1", ".ball_a_2", ".ball_a_3", ".ball_a_4", ".ball_a_5"]), .5 )
@@ -64,12 +71,12 @@ tl.add("f3", "+=4")
 
 tl.from([".bg", ".legal"], {duration:.3, opacity:0}, "f3")
 
-tl.from([".hand_0", ".hand_1"], {duration:.3, y:`+=${bannerSize.h}`})
+tl.from([".hand_0", ".hand_1"], {duration:yDuration, y:`+=${bannerSize.h}`})
 
 
-tl.from(".t3", {duration:.3, x:`-=${bannerSize.w}`})
+tl.from(".t3", {duration:xDuration, x:`-=${bannerSize.w}`})
 if(vh==="ver"){
-	tl.from(".cta", {duration:.3, x:`-=${bannerSize.w}`})	
+	tl.from(".cta", {duration:xDuration, x:`-=${bannerSize.w}`})	
 }else{
 	tl.from(".cta", {duration:.3, opacity:0})
 }
