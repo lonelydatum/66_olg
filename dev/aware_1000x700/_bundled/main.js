@@ -46,7 +46,7 @@ function init() {
 	return tl;
 }
 
-function standard(y) {
+function standard(y, vh) {
 
 	var tl = init();
 
@@ -73,7 +73,11 @@ function standard(y) {
 	tl.from([".hand_0", ".hand_1"], { duration: .3, y: "+=" + bannerSize.h });
 
 	tl.from(".t3", { duration: .3, x: "-=" + bannerSize.w });
-	tl.from(".cta", { duration: .3, x: "-=" + bannerSize.w });
+	if (vh === "ver") {
+		tl.from(".cta", { duration: .3, x: "-=" + bannerSize.w });
+	} else {
+		tl.from(".cta", { duration: .3, opacity: 0 });
+	}
 
 	tl.add("screen_change", "+=2");
 	tl.to(".hand_1", { duration: .3, opacity: 0 }, "screen_change");
@@ -93,15 +97,15 @@ function balls(list) {
 function b_970x250() {}
 
 function b_160x600() {
-	standard(200);
+	standard(200, "ver");
 }
 
 function b_300x250() {
-	standard(100);
+	standard(100, "hor");
 }
 
 function b_300x600() {
-	standard(200);
+	standard(200, "ver");
 }
 
 function b_1000x700() {
@@ -114,10 +118,12 @@ function b_970x70() {
 }
 
 function b_320x50() {
-	standard(50);
+	standard(50, "hor");
 }
 
-function b_728x90(text1) {}
+function b_728x90(text1) {
+	standard(80, "hor");
+}
 
 exports.init = init;
 exports.b_160x600 = b_160x600;
