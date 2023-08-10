@@ -70,7 +70,7 @@ table {
   color: black;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   padding: 10px;
-  font-size: 10px;
+  font-size: 13px;
   z-index: 900;
   opacity: 0;
   font-weight: normal;
@@ -216,9 +216,9 @@ canvas, .text, .frame, .outline, img {
 }
 
 #legalBtn {
-  -webkit-transform: translate(86px, 560px);
-  -ms-transform: translate(86px, 560px);
-  transform: translate(86px, 560px);
+  -webkit-transform: translate(86px, 0px);
+  -ms-transform: translate(86px, 0px);
+  transform: translate(86px, 0px);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;

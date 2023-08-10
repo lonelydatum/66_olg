@@ -41,21 +41,21 @@ function init(){
 
 function standard(y, vh){	
 	let xDuration = .3 * (bannerSize.w/300)
-	xDuration = Math.min(xDuration, .5)
+	xDuration = Math.min(xDuration, .4)
 	
 
 	let yDuration = .3 * (bannerSize.h/250)
-	yDuration = Math.min(yDuration, .5)
+	yDuration = Math.min(yDuration, .4)
 const tl = init()	
 
 
 	
 olg()
-tl.add( balls([".ball_a_1", ".ball_a_2", ".ball_a_3", ".ball_a_4", ".ball_a_5"]), .5 )
+tl.add( balls([".ball_a_1", ".ball_a_2", ".ball_a_3", ".ball_a_4", ".ball_a_5", ".ball_a_6", ".ball_a_7"]), .5 )
 
 tl.from(".t1", {duration:.36, y:`-=${y}`})
 
-tl.add("f2", "+=2.2")
+tl.add("f2", "+=2")
 tl.to(".f1", {duration:.3, opacity:0}, "f2")
 
 tl.to(".peeps", {duration:.3, opacity:0}, "f2")
@@ -65,9 +65,9 @@ tl.from(".peeps_blur", {duration:.3, opacity:0}, "f2")
 tl.from(".phone", {duration:.3, y:`+=${bannerSize.h}`})
 tl.from(".t2", {duration:.36, y:`-=${y}`}, "+=.3")
 
-tl.add(balls([".ball_b_1", ".ball_b_2", ".ball_b_3"]))
+tl.add(balls([".ball_b_1", ".ball_b_2", ".ball_b_3", ".ball_b_4", ".ball_b_5"]))
 
-tl.add("f3", "+=4")
+tl.add("f3", "+=3.7")
 
 tl.from([".bg", ".legal"], {duration:.3, opacity:0}, "f3")
 
