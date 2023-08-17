@@ -232,4 +232,10 @@ canvas, .text, .frame, .outline, img {
   font-size: 9px;
 }
 
+#legalContent {
+  line-height: 10px;
+  font-size: 8px;
+  padding: 3px;
+}
+
 /*# sourceMappingURL=main.css.map */
