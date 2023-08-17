@@ -30,7 +30,7 @@ var yyy = {
 var creative = {
 	legal: {
 		aware: "Screens not exactly as shown. Must be 18 or older and a resident of Ontario located in the province to play lottery on OLG.ca. Terms and Conditions apply.",
-		retarget: "Screens not exactly as shown. Must be 18 or older and a resident of Ontario currently in the province to participate. Sign up and spend a minimum of $10 on lottery at OLG.ca to get the $10 bonus. This offer can only be redeemed on lottery products on OLG.ca. Terms and conditions apply."
+		retarget: "Screens not exactly as shown. Must be 18 or older and a resident of Ontario currently in the province to participate. Sign up and buy any lottery ticket at OLG.ca to get the $10 bonus. This offer can only be redeemed on lottery products at OLG.ca Offer valid till March 31, 2024. Terms and Conditions apply. "
 	}
 };
 
